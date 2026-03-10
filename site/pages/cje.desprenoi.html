@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despre noi - CJE Brașov</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            /* Nuanțe complementare de mov */
+            --accent-purple: #0c37a4;
+            --deep-purple: #0d29b4;
+            --light-bg: #000000; /* Fundal 100% negru */
+            --card-bg: #111827; /* gray-900 pentru contrast pe negru */
+            --border-color: #1f2937;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--light-bg);
+            color: #f8fafc;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+            color: #94a3b8;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--blue);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--blue);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Stiluri pentru cardurile echipei */
+        .team-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-purple);
+        }
+
+        .team-img-wrapper {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .team-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .team-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        /* Structura organizatorica CSS */
+        .org-box {
+            padding: 14px 28px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Navigație -->
+    <nav class="bg-black/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 shrink-0">
+                    <img src="logo1.png" alt="Logo CJE Brașov" class="logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'font-extrabold text-2xl text-purple-500\'>CJE BV</div>'">
+                    <div class="font-black text-xl leading-tight uppercase hidden lg:block tracking-tighter text-white">
+                        CJE<br><span class="text-purple-500">Brașov</span>
+                    </div>
+                </div>
+
+                <!-- Meniu Centrat -->
+                <div class="hidden md:flex flex-1 justify-center space-x-8 font-medium text-[15px]">
+                    <a href="cje.acasa.html" class="nav-link">Acasă</a>
+                    <a href="cje.desprenoi.html" class="nav-link active text-purple-500">Despre noi</a>
+                    <a href="cje.documente.html" class="nav-link">Documente</a>
+                    <a href="#" class="nav-link">Parteneri</a>
+                    <a href="cje.blog.html" class="nav-link">Blog</a>
+                    <a href="cje.contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <!-- Social -->
+                <div class="flex items-center space-x-5 text-gray-400 text-lg shrink-0">
+                    <a href="#" class="hover:text-purple-500 transition-transform hover:scale-110"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-purple-400 transition-transform hover:scale-110"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition-transform hover:scale-110"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Pagină -->
+    <section class="relative bg-black py-20 lg:py-28 border-b border-white/5 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(#1f2937_1px,transparent_1px)] [background-size:20px_20px] opacity-40"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-purple-900/30 text-purple-400 text-sm font-bold tracking-wide border border-purple-500/30 uppercase backdrop-blur-sm">
+                Cunoaște echipa
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight mb-6">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">Despre Noi</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                Structura, organizarea și echipa dedicată care reprezintă vocea tuturor elevilor la nivel județean.
+            </p>
+        </div>
+    </section>
+
+    <!-- Secțiune: Cum este organizat Consiliul -->
+    <section class="py-24 bg-black relative">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <!-- ====== PARTEA 1: SCHEMA DE ORGANIZARE (SUS) ====== -->
+            <div class="flex flex-col items-center mb-24 w-full">
+                
+                <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight mb-16 text-center">
+                    Structura de organizare:
+                </h2>
+                
+                <div class="flex flex-col items-center justify-center p-10 sm:p-16 bg-gray-900/40 rounded-[3rem] border border-white/10 shadow-2xl relative overflow-hidden w-full max-w-5xl">
+                    <!-- Lumini de fundal blurate -->
+                    <div class="absolute top-0 left-1/4 w-72 h-72 bg-purple-600/20 rounded-full filter blur-[100px] opacity-60"></div>
+                    <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-pink-600/10 rounded-full filter blur-[100px] opacity-60"></div>
+                    
+                    <div class="flex flex-col items-center w-full relative z-10">
+                        
+                        <!-- 1. Adunarea generală a CNE -->
+                        <div class="org-box bg-red-600 text-white w-64 sm:w-80 shadow-lg shadow-red-900/50 border border-red-500 text-lg">
+                            Adunarea generală a CNE
+                        </div>
+                        <div class="w-1 h-8 bg-gradient-to-b from-red-600 to-purple-500"></div>
+                        
+                        <!-- Nivel cu ramificații (BECNE stânga / Etică dreapta) -->
+                        <div class="w-[90%] sm:w-[80%] md:w-[60%] flex flex-col items-center">
+                            <!-- Linie orizontală despărțitoare -->
+                            <div class="w-full h-1 bg-purple-500"></div>
+                            
+                            <!-- Liniile verticale care coboară din linia orizontală -->
+                            <div class="w-full flex justify-between relative">
+                                <div class="w-1 h-8 bg-purple-500"></div> <!-- Stânga -->
+                                <div class="absolute left-1/2 -translate-x-1/2 top-0 w-1 h-full bg-purple-500"></div> <!-- Centru -->
+                                <div class="w-1 h-8 bg-purple-500"></div> <!-- Dreapta -->
+                            </div>
+                            
+                            <!-- Nodurile stânga / dreapta -->
+                            <div class="w-[110%] sm:w-[105%] flex justify-between items-start -mt-2 relative z-10">
+                                <!-- Stânga -->
+                                <div class="w-[40%] flex justify-center">
+                                    <div class="bg-gray-800 border border-purple-500/50 rounded-xl px-3 py-3 text-xs sm:text-sm font-bold text-purple-300 text-center shadow-lg w-full max-w-[200px]">
+                                        Biroul executiv CNE
+                                    </div>
+                                </div>
+                                <!-- Dreapta -->
+                                <div class="w-[40%] flex justify-center">
+                                    <div class="bg-gray-800 border border-purple-500/50 rounded-xl px-3 py-3 text-xs sm:text-sm font-bold text-purple-300 text-center shadow-lg w-full max-w-[200px]">
+                                        Comisia Națională<br>de Etică
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Continuare linie centru sub ramificații -->
+                            <div class="w-1 h-14 bg-purple-500 relative z-0 -mt-8"></div>
+                        </div>
+
+                        <!-- 2. Adunarea generală a CJE -->
+                        <div class="org-box bg-purple-600 text-white w-64 sm:w-80 shadow-lg shadow-purple-900/50 border border-purple-500 z-10 text-lg">
+                            Adunarea generală a CJE
+                        </div>
+                        <div class="w-1 h-6 bg-purple-700"></div>
+                        
+                        <!-- 3. Biroul executiv CJE -->
+                        <div class="bg-gray-800 text-purple-300 border-2 border-purple-500/30 rounded-full w-56 sm:w-72 py-3 text-sm font-bold text-center shadow-lg flex items-center justify-center gap-2 z-10">
+                            <i class="fas fa-users-cog text-purple-400"></i> Biroul executiv CJE
+                        </div>
+                        <div class="w-1 h-8 bg-gradient-to-b from-gray-800 to-gray-600"></div>
+                        
+                        <!-- 4. Adunarea generală a CȘE -->
+                        <div class="org-box bg-gray-700 text-white w-64 sm:w-80 shadow-lg shadow-black border border-gray-500 z-10 text-lg">
+                            Adunarea generală a CȘE
+                        </div>
+                        <div class="w-1 h-6 bg-gray-600"></div>
+                        
+                        <!-- 5. Biroul executiv al CȘE -->
+                        <div class="bg-gray-900 text-gray-300 border-2 border-gray-600 rounded-full w-56 sm:w-72 py-3 text-sm font-bold text-center shadow-lg flex items-center justify-center gap-2 z-10">
+                            <i class="fas fa-users text-gray-400"></i> Biroul executiv al CȘE
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ====== PARTEA 2: TEXT DESCRIERE (JOS) ====== -->
+            <div class="max-w-4xl mx-auto text-center border-t border-white/10 pt-20">
+                <div class="inline-flex items-center justify-center space-x-3 mb-6">
+                    <div class="w-12 h-1 bg-purple-500 rounded"></div>
+                    <span class="text-purple-500 font-bold uppercase tracking-wider text-sm">Misiunea Noastră</span>
+                    <div class="w-12 h-1 bg-purple-500 rounded"></div>
+                </div>
+                
+                <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight mb-8 leading-tight">
+                    Vocea ta contează în <span class="text-purple-500">educație</span>
+                </h2>
+                
+                <p class="text-gray-300 text-xl font-medium mb-6 leading-relaxed">
+                    Consiliul Județean al Elevilor este unica structură de reprezentare a elevilor la nivel județean.
+                </p>
+                
+                <p class="text-gray-400 leading-relaxed text-lg mb-12">
+                    Milităm pentru o educație incluzivă de calitate, respectarea drepturilor prevăzute în Statutul Elevului și conturarea unui sistem educațional centrat pe nevoile reale ale tinerilor, comunicând constant prin intermediul consiliilor școlare.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left max-w-3xl mx-auto">
+                    <div class="flex flex-col bg-gray-900/50 p-6 rounded-2xl border border-white/5">
+                        <div class="w-12 h-12 rounded-xl bg-purple-900/30 text-purple-400 flex items-center justify-center text-xl mb-4 border border-purple-500/20">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-lg mb-2">Reprezentare</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Suntem vocea oficială a mii de elevi din județ, apărându-le interesele în fața autorităților.</p>
+                    </div>
+                    <div class="flex flex-col bg-gray-900/50 p-6 rounded-2xl border border-white/5">
+                        <div class="w-12 h-12 rounded-xl bg-red-900/20 text-red-500 flex items-center justify-center text-xl mb-4 border border-red-500/20">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-lg mb-2">Sprijin Continuu</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Suntem constant la dispoziția ta pentru a găsi soluții imediate la problemele sesizate în școli.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Secțiune: Echipa - Biroul Executiv -->
+    <section class="py-24 bg-black border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="text-center mb-16 relative">
+                <div class="absolute left-0 top-1/2 w-full h-px bg-white/10 -z-10"></div>
+                <h2 class="text-3xl font-black text-white bg-black px-6 inline-block tracking-tight">Biroul Executiv</h2>
+            </div>
+
+            <!-- Rândul 1: Președinte și Secretar -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-16">
+                
+                <!-- Card Președinte -->
+                <div class="team-card flex flex-col items-center text-center">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Președinte">
+                    </div>
+                    <div class="p-6 w-full">
+                        <h3 class="text-xl font-bold text-white mb-1">Alexandru Ionuț Popa</h3>
+                        <p class="text-sm font-semibold text-purple-400 uppercase tracking-wide mb-4">Președinte</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-purple-500 transition-colors text-xl"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-purple-400 transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Secretar Executiv -->
+                <div class="team-card flex flex-col items-center text-center">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Secretar">
+                    </div>
+                    <div class="p-6 w-full">
+                        <h3 class="text-xl font-bold text-white mb-1">Alexia-Christina Urzică</h3>
+                        <p class="text-sm font-semibold text-purple-400 uppercase tracking-wide mb-4">Secretar executiv</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-purple-500 transition-colors text-xl"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-purple-400 transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Rândul 2: Vicepreședinți -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Card Vice 1 -->
+                <div class="team-card flex flex-col items-center text-center">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vicepreședinte">
+                    </div>
+                    <div class="p-6 w-full">
+                        <h3 class="text-xl font-bold text-white mb-1">Andrei Mihai</h3>
+                        <p class="text-sm font-semibold text-purple-400 uppercase tracking-wide mb-4">Vicepreședinte</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-purple-500 transition-colors text-xl"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-purple-400 transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Vice 2 -->
+                <div class="team-card flex flex-col items-center text-center">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vicepreședinte">
+                    </div>
+                    <div class="p-6 w-full">
+                        <h3 class="text-xl font-bold text-white mb-1">Maria Ionescu</h3>
+                        <p class="text-sm font-semibold text-purple-400 uppercase tracking-wide mb-4">Vicepreședinte</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-purple-500 transition-colors text-xl"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-purple-400 transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Vice 3 -->
+                <div class="team-card flex flex-col items-center text-center">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vicepreședinte">
+                    </div>
+                    <div class="p-6 w-full">
+                        <h3 class="text-xl font-bold text-white mb-1">David Popescu</h3>
+                        <p class="text-sm font-semibold text-purple-400 uppercase tracking-wide mb-4">Vicepreședinte</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-purple-500 transition-colors text-xl"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-purple-400 transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Secțiune: Departamente -->
+    <section class="py-24 bg-black border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="text-center mb-16 relative">
+                <div class="absolute left-0 top-1/2 w-full h-px bg-white/10 -z-10"></div>
+                <h2 class="text-3xl font-black text-white bg-black px-6 inline-block tracking-tight">Departamente</h2>
+            </div>
+
+            <!-- Rând Departamente -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Director PR -->
+                <div class="team-card flex flex-col items-center text-center">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="PR">
+                    </div>
+                    <div class="p-6 w-full">
+                        <h3 class="text-xl font-bold text-white mb-1">Elena Radu</h3>
+                        <p class="text-sm font-semibold text-purple-400 uppercase tracking-wide mb-4">Director PR & Comunicare</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-purple-500 transition-colors text-xl"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-purple-400 transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Director HR -->
+                <div class="team-card flex flex-col items-center text-center">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="HR">
+                    </div>
+                    <div class="p-6 w-full">
+                        <h3 class="text-xl font-bold text-white mb-1">Victor Toma</h3>
+                        <p class="text-sm font-semibold text-purple-400 uppercase tracking-wide mb-4">Director Resurse Umane</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-purple-500 transition-colors text-xl"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-purple-400 transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Director Avocatul Elevului -->
+                <div class="team-card flex flex-col items-center text-center">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Avocatul Elevului">
+                    </div>
+                    <div class="p-6 w-full">
+                        <h3 class="text-xl font-bold text-white mb-1">Sara Matei</h3>
+                        <p class="text-sm font-semibold text-purple-400 uppercase tracking-wide mb-4">Avocatul Elevului</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-purple-500 transition-colors text-xl"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-purple-400 transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Minimalist / Clean -->
+    <footer class="bg-black py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Logo Footer -->
+                <div class="flex items-center space-x-3">
+                    <div class="font-black text-xl tracking-tight text-white">
+                        CJE <span class="text-purple-500">Brașov</span>
+                    </div>
+                </div>
+                                <div class="flex items-center space-x-3 shrink-0">
+                    <img src="logo1.png" alt="Logo CJE Brașov" class="logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'font-extrabold text-2xl text-purple-500\'>CJE BV</div>'">
+                    <div class="font-black text-xl leading-tight uppercase hidden lg:block tracking-tighter text-white">
+                        CJE<br><span class="text-purple-500">Brașov</span>
+                    </div>
+                </div>
+
+                <!-- Social Media Footer -->
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-purple-500 text-xl transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-purple-400 text-xl transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white text-xl transition-colors" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500 font-medium">
+                    &copy; 2026 Consiliul Județean al Elevilor Brașov. Toate drepturile rezervate.
+                </p>
+                <a href="mailto:brasov@consiliulelevilor.ro" class="text-sm font-medium text-gray-500 hover:text-purple-500 transition-colors">
+                    brasov@consiliulelevilor.ro
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

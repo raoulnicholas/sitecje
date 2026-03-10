@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CJE Brașov</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --accent-purple: #9333ea;
+            --deep-purple: #6b21a8;
+            --light-bg: #020617;
+            --card-bg: #0f172a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--light-bg);
+            color: #f8fafc;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+            color: #94a3b8;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-purple);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-purple);
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen bg-slate-950 text-slate-50">
+
+    <!-- Navigație -->
+    <nav class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <a href="cje.acasa.html" class="flex items-center space-x-3 shrink-0 hover:opacity-90 transition-opacity">
+                    <img src="logo1.png" alt="Logo CJE Brașov" class="logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'font-extrabold text-2xl text-purple-500\'>CJE BV</div>'">
+                    <div class="font-black text-xl leading-tight uppercase hidden lg:block tracking-tighter text-white">
+                        CJE<br><span class="text-purple-500">Brașov</span>
+                    </div>
+                </a>
+
+                <!-- Meniu Centrat (Desktop) -->
+                <div class="hidden md:flex flex-1 justify-center space-x-8 font-medium text-[15px]">
+                    <a href="cje.acasa.html" class="nav-link">Acasă</a>
+                    <a href="cje.desprenoi.html" class="nav-link">Despre noi</a>
+                    <a href="cje.documente.html" class="nav-link">Documente</a>
+                    <a href="#" class="nav-link">Parteneri</a>
+                    <a href="cje.blog.html" class="nav-link">Blog</a>
+                    <a href="cje.contact.html" class="nav-link active text-purple-500">Contact</a>
+                </div>
+
+                <!-- Social & Mobile Toggle -->
+                <div class="flex items-center space-x-5 text-lg shrink-0">
+                    <div class="hidden sm:flex items-center space-x-5">
+                        <a href="#" class="text-purple-400 hover:text-[#1877F2] transition-all hover:scale-110"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-purple-400 hover:text-[#E1306C] transition-all hover:scale-110"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-purple-400 hover:text-white transition-all hover:scale-110"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <!-- Buton Meniu Mobil -->
+                    <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-purple-400 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meniu Mobil (Ascuns implicit) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 absolute w-full shadow-2xl">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col font-medium text-slate-300">
+                <a href="index.html" class="block px-3 py-2 rounded-md hover:bg-slate-800 hover:text-purple-400">Acasă</a>
+                <a href="despre-noi.html" class="block px-3 py-2 rounded-md hover:bg-slate-800 hover:text-purple-400">Despre noi</a>
+                <a href="documente.html" class="block px-3 py-2 rounded-md hover:bg-slate-800 hover:text-purple-400">Documente</a>
+                <a href="#" class="block px-3 py-2 rounded-md hover:bg-slate-800 hover:text-purple-400">Parteneri</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-md hover:bg-slate-800 hover:text-purple-400">Blog</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md bg-purple-900/30 text-purple-400">Contact</a>
+                
+                <div class="flex space-x-6 px-3 py-4 mt-2 border-t border-slate-800 justify-center">
+                    <a href="#" class="text-purple-400 hover:text-[#1877F2] text-xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-purple-400 hover:text-[#E1306C] text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-purple-400 hover:text-white text-xl"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conținut Principal -->
+    <main class="flex-grow bg-slate-950 relative py-16 lg:py-24 overflow-hidden">
+        <!-- Background Pattern & Blob Mov -->
+        <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full mix-blend-screen filter blur-[120px] opacity-70 animate-pulse pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-900/20 rounded-full mix-blend-screen filter blur-[120px] opacity-50 pointer-events-none"></div>
+
+        <div class="relative max-w-6xl mx-auto px-6 z-10">
+            
+            <!-- Header Secțiune -->
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
+                    Contactează-ne
+                </h1>
+                <p class="text-lg md:text-xl text-slate-400 font-medium max-w-2xl mx-auto">
+                    Ai o problemă în școală, o propunere sau pur și simplu vrei să afli mai multe? Suntem aici pentru tine. Fii vocea colegilor tăi!
+                </p>
+            </div>
+
+            <!-- Grid cu cele două carduri principale -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                
+                <!-- Card Stânga: Trimite-ne un mesaj -->
+                <div class="bg-slate-900/80 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-slate-800 p-8 md:p-12 hover:shadow-purple-900/20 transition-all duration-300">
+                    <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                        <i class="fas fa-paper-plane text-purple-500"></i>
+                        Trimite-ne un mesaj
+                    </h2>
+                    
+                    <div class="border-2 border-dashed border-slate-700 bg-slate-950/50 rounded-2xl p-8 md:p-12 flex flex-col items-center justify-center space-y-6 h-[calc(100%-4rem)]">
+                        
+                        <a href="#" class="w-full max-w-sm flex items-center justify-center px-6 py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl shadow-lg shadow-purple-900/50 transition-all hover:-translate-y-1 text-center">
+                            <i class="fab fa-google mr-2"></i> Formular Google (Anonim)
+                        </a>
+                        
+                        <div class="flex items-center w-full max-w-sm">
+                            <div class="flex-grow h-px bg-slate-700"></div>
+                            <span class="px-4 text-sm font-semibold text-slate-500 uppercase tracking-wider">sau direct</span>
+                            <div class="flex-grow h-px bg-slate-700"></div>
+                        </div>
+
+                        <a href="mailto:brasov@consiliulelevilor.ro" class="w-full max-w-sm flex items-center justify-center px-6 py-4 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl shadow-lg shadow-slate-900/50 transition-all hover:-translate-y-1 text-center border border-slate-700">
+                            <i class="fas fa-envelope mr-2"></i> Trimite-ne un e-mail
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Card Dreapta: Informații de contact -->
+                <div class="bg-slate-900/80 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-slate-800 p-8 md:p-12 hover:shadow-purple-900/20 transition-all duration-300">
+                    <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                        <i class="fas fa-address-book text-purple-500"></i>
+                        Informații de contact
+                    </h2>
+
+                    <div class="space-y-6">
+                        
+                        <!-- Item: Email -->
+                        <div class="flex items-start bg-slate-800/50 p-6 rounded-2xl border-l-4 border-purple-500 transition-colors hover:bg-slate-800">
+                            <div class="bg-slate-950 p-3 rounded-lg shadow-sm mr-5 text-purple-400 shrink-0 border border-slate-800">
+                                <i class="fas fa-at text-xl w-5 h-5 flex items-center justify-center"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <h3 class="text-lg font-bold text-white mb-1">Email Oficial</h3>
+                                <a href="mailto:brasov@consiliulelevilor.ro" class="text-purple-400 hover:text-purple-300 font-medium transition-colors break-all">
+                                    brasov@consiliulelevilor.ro
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Item: Telefon -->
+                        <div class="flex items-start bg-slate-800/50 p-6 rounded-2xl border-l-4 border-purple-500 transition-colors hover:bg-slate-800">
+                            <div class="bg-slate-950 p-3 rounded-lg shadow-sm mr-5 text-purple-400 shrink-0 border border-slate-800">
+                                <i class="fas fa-phone-alt text-xl w-5 h-5 flex items-center justify-center"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Telefon</h3>
+                                <div class="space-y-2">
+                                    <p class="text-purple-400 font-medium flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                                        <a href="tel:+40712345678" class="hover:underline">+40 712 345 678</a>
+                                        <span class="text-slate-400 text-sm font-normal bg-slate-950 px-2 py-0.5 rounded-md border border-slate-800 w-fit">Președinte</span>
+                                    </p>
+                                    <p class="text-purple-400 font-medium flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                                        <a href="tel:+40787654321" class="hover:underline">+40 787 654 321</a>
+                                        <span class="text-slate-400 text-sm font-normal bg-slate-950 px-2 py-0.5 rounded-md border border-slate-800 w-fit">Secretar Executiv</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item: Social Media -->
+                        <div class="flex items-start bg-slate-800/50 p-6 rounded-2xl border-l-4 border-purple-500 transition-colors hover:bg-slate-800">
+                            <div class="bg-slate-950 p-3 rounded-lg shadow-sm mr-5 text-purple-400 shrink-0 border border-slate-800">
+                                <i class="fas fa-users text-xl w-5 h-5 flex items-center justify-center"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-3">Rețele sociale</h3>
+                                <div class="flex space-x-3">
+                                    <a href="#" class="flex items-center justify-center w-11 h-11 bg-slate-900 rounded-full text-purple-400 shadow-sm hover:bg-[#1877F2] hover:text-white transition-all transform hover:scale-110 border border-slate-700 hover:border-transparent">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="flex items-center justify-center w-11 h-11 bg-slate-900 rounded-full text-purple-400 shadow-sm hover:bg-[#E1306C] hover:text-white transition-all transform hover:scale-110 border border-slate-700 hover:border-transparent">
+                                        <i class="fab fa-instagram text-lg"></i>
+                                    </a>
+                                    <a href="#" class="flex items-center justify-center w-11 h-11 bg-slate-900 rounded-full text-purple-400 shadow-sm hover:bg-white hover:text-black transition-all transform hover:scale-110 border border-slate-700 hover:border-transparent">
+                                        <i class="fab fa-tiktok"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Logo Footer -->
+                <div class="flex items-center space-x-3">
+                    <div class="font-black text-xl tracking-tight text-white">
+                        CJE <span class="text-purple-500">Brașov</span>
+                    </div>
+                </div>
+
+                <!-- Social Media Footer -->
+                <div class="flex space-x-6">
+                    <a href="#" class="text-purple-500 hover:text-[#1877F2] text-2xl transition-all hover:scale-110" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-purple-500 hover:text-[#E1306C] text-2xl transition-all hover:scale-110" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-purple-500 hover:text-white text-2xl transition-all hover:scale-110" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-slate-500 font-medium text-center md:text-left">
+                    &copy; 2026 Consiliul Județean al Elevilor Brașov. Toate drepturile rezervate.
+                </p>
+                <a href="mailto:brasov@consiliulelevilor.ro" class="text-sm font-medium text-slate-500 hover:text-purple-400 transition-colors">
+                    brasov@consiliulelevilor.ro
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script pentru meniul mobil -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if(menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+    </script>
+</body>
+</html>

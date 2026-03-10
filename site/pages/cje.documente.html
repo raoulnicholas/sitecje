@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documente - CJE Brașov</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --accent-purple: #9333ea; /* Tailwind purple-600 */
+            --accent-purple-light: #a855f7; /* Tailwind purple-500 */
+            --dark-bg: #000000;
+            --card-bg: #121212; /* Tailwind neutral-900 echivalent */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--dark-bg);
+            color: #e5e7eb; /* text-gray-200 */
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+            color: #9ca3af; /* text-gray-400 */
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-purple-light);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-purple-light);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-purple-500/30">
+
+    <!-- Navigație -->
+    <nav class="bg-black/80 backdrop-blur-md border-b border-neutral-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 shrink-0">
+                    <img src="logo1.png" alt="Logo CJE Brașov" class="logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'font-extrabold text-2xl text-purple-500\'>CJE BV</div>'">
+                    <div class="font-black text-xl leading-tight uppercase hidden lg:block tracking-tighter text-white">
+                        CJE<br><span class="text-purple-500">Brașov</span>
+                    </div>
+                </div>
+
+                <!-- Meniu Centrat -->
+                <div class="hidden md:flex flex-1 justify-center space-x-8 font-medium text-[15px]">
+                    <a href="consiliuljudetean.acasa.html" class="nav-link">Acasă</a>
+                    <a href="consiliuljudetean.despre.html" class="nav-link">Despre noi</a>
+                    <a href="cje.documente.html" class="nav-link active text-purple-400">Documente</a>
+                    <a href="#" class="nav-link">Parteneri</a>
+                    <a href="consiliuljudetean.blog.html" class="nav-link">Blog</a>
+                    <a href="consiliuljudetean.contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <!-- Social -->
+                <div class="flex items-center space-x-5 text-lg shrink-0">
+                    <a href="#" class="text-purple-500 hover:text-white transition-all hover:scale-110"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-purple-500 hover:text-white transition-all hover:scale-110"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-purple-500 hover:text-white transition-all hover:scale-110"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Pagină -->
+    <section class="relative bg-black py-20 lg:py-28 border-b border-neutral-800 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-purple-900/30 text-purple-400 text-sm font-bold tracking-wide border border-purple-800/50 uppercase">
+                Transparență
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight mb-6">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">Documente Oficiale</span>
+            </h1>
+            <p class="text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+                Aici poți găsi regulamentele, rapoartele de activitate și alte resurse utile ale Consiliului Județean al Elevilor Brașov.
+            </p>
+        </div>
+    </section>
+
+    <!-- Secțiune: Documente pe Coloane -->
+    <section class="py-20 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <!-- Grid 3 Coloane -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+                <!-- COLOANA 1: Regulamente și Metodologii -->
+                <div class="flex flex-col space-y-6">
+                    <!-- Antet Coloană -->
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 bg-purple-600 text-white rounded-xl flex items-center justify-center text-lg shadow-lg shadow-purple-600/20 shrink-0">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h2 class="text-xl lg:text-2xl font-black text-white tracking-tight leading-tight">Regulamente & Metodologii</h2>
+                    </div>
+
+                    <!-- Card Document 1 -->
+                    <div class="bg-neutral-900 p-6 rounded-2xl border border-neutral-800 shadow-sm hover:shadow-purple-900/20 hover:-translate-y-1 hover:border-purple-500/50 transition-all group flex flex-col">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-10 h-10 bg-red-500/10 text-red-500 rounded-lg flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="bg-neutral-800 text-neutral-300 text-[10px] font-bold px-2 py-1 rounded-full border border-neutral-700">PDF</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2 leading-tight">Statutul Elevului</h3>
+                        <p class="text-xs text-neutral-400 mb-4 flex-grow">Drepturile și îndatoririle elevilor din România, actualizat.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-neutral-800">
+                            <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-400 hover:text-white transition-colors">
+                                <i class="fas fa-eye"></i> Vizualizează
+                            </a>
+                            <a href="#" download class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-download"></i> Descarcă
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card Document 2 -->
+                    <div class="bg-neutral-900 p-6 rounded-2xl border border-neutral-800 shadow-sm hover:shadow-purple-900/20 hover:-translate-y-1 hover:border-purple-500/50 transition-all group flex flex-col">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-10 h-10 bg-red-500/10 text-red-500 rounded-lg flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="bg-neutral-800 text-neutral-300 text-[10px] font-bold px-2 py-1 rounded-full border border-neutral-700">PDF</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2 leading-tight">Regulament de Organizare (ROI)</h3>
+                        <p class="text-xs text-neutral-400 mb-4 flex-grow">Regulamentul de organizare și funcționare a CJE Brașov.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-neutral-800">
+                            <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-400 hover:text-white transition-colors">
+                                <i class="fas fa-eye"></i> Vizualizează
+                            </a>
+                            <a href="#" download class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-download"></i> Descarcă
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card Document 3 -->
+                    <div class="bg-neutral-900 p-6 rounded-2xl border border-neutral-800 shadow-sm hover:shadow-purple-900/20 hover:-translate-y-1 hover:border-purple-500/50 transition-all group flex flex-col">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-10 h-10 bg-red-500/10 text-red-500 rounded-lg flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="bg-neutral-800 text-neutral-300 text-[10px] font-bold px-2 py-1 rounded-full border border-neutral-700">PDF</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2 leading-tight">Metodologia Alegerilor</h3>
+                        <p class="text-xs text-neutral-400 mb-4 flex-grow">Documentul oficial care reglementează procesul de alegeri.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-neutral-800">
+                            <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-400 hover:text-white transition-colors">
+                                <i class="fas fa-eye"></i> Vizualizează
+                            </a>
+                            <a href="#" download class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-download"></i> Descarcă
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLOANA 2: Rapoarte de Activitate -->
+                <div class="flex flex-col space-y-6">
+                    <!-- Antet Coloană -->
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 bg-neutral-800 text-white rounded-xl flex items-center justify-center text-lg shadow-lg border border-neutral-700 shrink-0">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h2 class="text-xl lg:text-2xl font-black text-white tracking-tight leading-tight">Rapoarte de Activitate</h2>
+                    </div>
+
+                    <!-- Card Document 4 -->
+                    <div class="bg-neutral-900 p-6 rounded-2xl border border-neutral-800 shadow-sm hover:shadow-purple-900/20 hover:-translate-y-1 hover:border-purple-500/50 transition-all group flex flex-col">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-10 h-10 bg-red-500/10 text-red-500 rounded-lg flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="bg-neutral-800 text-neutral-300 text-[10px] font-bold px-2 py-1 rounded-full border border-neutral-700">PDF</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2 leading-tight">Raport Anual CJE (2025)</h3>
+                        <p class="text-xs text-neutral-400 mb-4 flex-grow">Rezumatul tuturor activităților desfășurate în anul 2025.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-neutral-800">
+                            <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-400 hover:text-white transition-colors">
+                                <i class="fas fa-eye"></i> Vizualizează
+                            </a>
+                            <a href="#" download class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-download"></i> Descarcă
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card Document 5 -->
+                    <div class="bg-neutral-900 p-6 rounded-2xl border border-neutral-800 shadow-sm hover:shadow-purple-900/20 hover:-translate-y-1 hover:border-purple-500/50 transition-all group flex flex-col">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-10 h-10 bg-red-500/10 text-red-500 rounded-lg flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="bg-neutral-800 text-neutral-300 text-[10px] font-bold px-2 py-1 rounded-full border border-neutral-700">PDF</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2 leading-tight">Starea Învățământului Brașovean</h3>
+                        <p class="text-xs text-neutral-400 mb-4 flex-grow">O analiză privind condițiile din liceele din județ.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-neutral-800">
+                            <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-400 hover:text-white transition-colors">
+                                <i class="fas fa-eye"></i> Vizualizează
+                            </a>
+                            <a href="#" download class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-download"></i> Descarcă
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card Document 6 -->
+                    <div class="bg-neutral-900 p-6 rounded-2xl border border-neutral-800 shadow-sm hover:shadow-purple-900/20 hover:-translate-y-1 hover:border-purple-500/50 transition-all group flex flex-col">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-10 h-10 bg-red-500/10 text-red-500 rounded-lg flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="bg-neutral-800 text-neutral-300 text-[10px] font-bold px-2 py-1 rounded-full border border-neutral-700">PDF</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2 leading-tight">Raport Financiar (Semestrul I)</h3>
+                        <p class="text-xs text-neutral-400 mb-4 flex-grow">Situația resurselor și bugetelor gestionate de asociație.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-neutral-800">
+                            <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-400 hover:text-white transition-colors">
+                                <i class="fas fa-eye"></i> Vizualizează
+                            </a>
+                            <a href="#" download class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-download"></i> Descarcă
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLOANA 3: Formulare și Ghiduri -->
+                <div class="flex flex-col space-y-6">
+                    <!-- Antet Coloană -->
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-10 h-10 bg-purple-900 text-white rounded-xl flex items-center justify-center text-lg shadow-lg border border-purple-700 shrink-0">
+                            <i class="fas fa-folder-open"></i>
+                        </div>
+                        <h2 class="text-xl lg:text-2xl font-black text-white tracking-tight leading-tight">Formulare & Ghiduri</h2>
+                    </div>
+
+                    <!-- Card Document 7 (Convertit în PDF) -->
+                    <div class="bg-neutral-900 p-6 rounded-2xl border border-neutral-800 shadow-sm hover:shadow-purple-900/20 hover:-translate-y-1 hover:border-purple-500/50 transition-all group flex flex-col">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-10 h-10 bg-red-500/10 text-red-500 rounded-lg flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="bg-neutral-800 text-neutral-300 text-[10px] font-bold px-2 py-1 rounded-full border border-neutral-700">PDF</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2 leading-tight">Formular Adeziune Voluntar</h3>
+                        <p class="text-xs text-neutral-400 mb-4 flex-grow">Completează acest formular pentru a te alătura echipei.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-neutral-800">
+                            <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-400 hover:text-white transition-colors">
+                                <i class="fas fa-eye"></i> Vizualizează
+                            </a>
+                            <a href="#" download class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-download"></i> Descarcă
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card Document 8 (Convertit în PDF) -->
+                    <div class="bg-neutral-900 p-6 rounded-2xl border border-neutral-800 shadow-sm hover:shadow-purple-900/20 hover:-translate-y-1 hover:border-purple-500/50 transition-all group flex flex-col">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-10 h-10 bg-red-500/10 text-red-500 rounded-lg flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="bg-neutral-800 text-neutral-300 text-[10px] font-bold px-2 py-1 rounded-full border border-neutral-700">PDF</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2 leading-tight">Model Proces Verbal CȘE</h3>
+                        <p class="text-xs text-neutral-400 mb-4 flex-grow">Template pentru redactarea proceselor verbale.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-neutral-800">
+                            <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-400 hover:text-white transition-colors">
+                                <i class="fas fa-eye"></i> Vizualizează
+                            </a>
+                            <a href="#" download class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-download"></i> Descarcă
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card Document 9 -->
+                    <div class="bg-neutral-900 p-6 rounded-2xl border border-neutral-800 shadow-sm hover:shadow-purple-900/20 hover:-translate-y-1 hover:border-purple-500/50 transition-all group flex flex-col">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-10 h-10 bg-red-500/10 text-red-500 rounded-lg flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <span class="bg-neutral-800 text-neutral-300 text-[10px] font-bold px-2 py-1 rounded-full border border-neutral-700">PDF</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-2 leading-tight">Ghidul Reprezentantului</h3>
+                        <p class="text-xs text-neutral-400 mb-4 flex-grow">Manual util pentru reprezentanții claselor și școlilor.</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-neutral-800">
+                            <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-400 hover:text-white transition-colors">
+                                <i class="fas fa-eye"></i> Vizualizează
+                            </a>
+                            <a href="#" download class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-download"></i> Descarcă
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer Modern -->
+    <footer class="bg-[#020202] pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="flex items-center space-x-3 group w-fit">
+                        <img src="logo1.png" alt="Logo CJE Brașov" class="h-12 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'font-black text-2xl bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600\'>CJE BV</div>'">
+                        <div class="font-black text-2xl tracking-tight text-white">
+                            CJE <span class="text-purple-500">Brașov</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                        Suntem singura structură de reprezentare a elevilor din județul Brașov, recunoscută oficial, care apără drepturile și interesele beneficiarilor primari ai educației.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="h-10 w-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:bg-purple-600 hover:text-white hover:border-purple-500 transition-all duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:bg-purple-600 hover:text-white hover:border-purple-500 transition-all duration-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:bg-purple-600 hover:text-white hover:border-purple-500 transition-all duration-300"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Navigație</h4>
+                    <ul class="space-y-3 text-sm flex flex-col items-start">
+                        <!-- Clasa adăugată: footer-nav-link -->
+                        <li><a href="#" class="footer-nav-link">Acasă</a></li>
+                        <li><a href="#" class="footer-nav-link">Despre noi</a></li>
+                        <li><a href="#" class="footer-nav-link">Documente</a></li>
+                        <li><a href="#" class="footer-nav-link">Comunicate de presă</a></li>
+                        <li><a href="#" class="footer-nav-link">Echipa</a></li>
+                    </ul>
+                </div>
+
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start space-x-3 text-gray-400">
+                            <i class="fas fa-map-marker-alt mt-1 text-purple-500"></i>
+                            <span>Brașov, România<br>Sediul Central</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-gray-400">
+                            <i class="fas fa-envelope text-purple-500"></i>
+                            <!-- Animație asemănătoare pusă și la email -->
+                            <a href="mailto:brasov@consiliulelevilor.ro" class="footer-nav-link">brasov@consiliulelevilor.ro</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-600 font-medium text-center md:text-left">
+                    &copy; 2026 Consiliul Județean al Elevilor Brașov. Toate drepturile rezervate.
+                </p>
+                <div class="flex space-x-4 text-xs text-gray-600 font-medium">
+                    <a href="#" class="hover:text-gray-300 transition-colors">Termeni și Condiții</a>
+                    <span>•</span>
+                    <a href="#" class="hover:text-gray-300 transition-colors">Politica de Confidențialitate</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

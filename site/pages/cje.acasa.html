@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CJE Brașov - Consiliul Județean al Elevilor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            /* Nuanțe complementare de mov */
+            --accent-purple: #a855f7; /* purple-500 */
+            --deep-purple: #7e22ce; /* purple-700 */
+            --light-bg: #000000; /* Fundal negru */
+            --card-bg: #111827; /* gray-900 pentru carduri */
+            --border-color: #1f2937; /* gray-800 */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--light-bg);
+            color: #f8fafc;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+            color: #94a3b8; /* slate-400 */
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-purple);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-purple);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Containerul pentru carusel */
+        .carousel-wrapper {
+            position: relative;
+            border-radius: 28px;
+            box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.25);
+            overflow: hidden;
+            height: 600px;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Un gradient mult mai închis: mult negru și un mov foarte profund (purple-950) */
+            background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(59, 7, 100, 0.85) 100%);
+            z-index: 2;
+        }
+
+        .carousel-content {
+            position: relative;
+            z-index: 3;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .objective-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 45px 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-side {
+            transform: scale(0.95);
+        }
+
+        .card-center {
+            padding-top: 70px;
+            padding-bottom: 70px;
+            background: #1f2937;
+            border: 2px solid var(--accent-purple);
+            box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.15);
+            z-index: 10;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: var(--accent-purple);
+            background: #1f2937;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .icon-container i {
+            font-size: 3.5rem;
+            color: var(--accent-purple);
+            margin-bottom: 25px;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .stat-icon-bg {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Navigație -->
+    <nav class="bg-black/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 shrink-0">
+                    <img src="logo1.png" alt="Logo CJE Brașov" class="logo-img" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'font-extrabold text-2xl text-purple-500\'>CJE BV</div>'">
+                    <div class="font-black text-xl leading-tight uppercase hidden lg:block tracking-tighter text-white">
+                        CJE<br><span class="text-purple-500">Brașov</span>
+                    </div>
+                </div>
+
+                <!-- Meniu Centrat (Design Clasic) -->
+                <div class="hidden md:flex flex-1 justify-center space-x-8 font-medium text-[15px]">
+                    <a href="cje.acasa.html" class="nav-link active text-purple-500">Acasă</a>
+                    <a href="cje.desprenoi.html" class="nav-link">Despre noi</a>
+                    <a href="cje.documente.html" class="nav-link">Documente</a>
+                    <a href="#" class="nav-link">Parteneri</a>
+                    <a href="cje.blog.html" class="nav-link">Blog</a>
+                    <a href="cje.contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <!-- Social -->
+                <div class="flex items-center space-x-5 text-gray-400 text-lg shrink-0">
+                    <a href="https://www.youtube.com/" class="hover:text-purple-500 transition-transform hover:scale-110"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-purple-400 transition-transform hover:scale-110"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition-transform hover:scale-110"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section cu Carusel Randomizat -->
+    <!-- Am adăugat padding mai mare (px-6 md:px-12 lg:px-16) și am redus max-width la 6xl pentru a micșora lățimea caruselului -->
+    <section class="mt-10 px-6 md:px-12 lg:px-16 mb-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="carousel-wrapper">
+                <!-- Pozele din carusel -->
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80" alt="Elevi 1" class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1511629091441-ee46146481b6?auto=format&fit=crop&w=1200&q=80" alt="Elevi 2" class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Elevi 3" class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80" alt="Elevi 4" class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=80" alt="Elevi 5" class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=80" alt="Elevi 6" class="carousel-slide">
+                
+                <div class="carousel-overlay"></div>
+                
+                <!-- Conținut deasupra caruselului -->
+                <div class="carousel-content text-center text-white px-6">
+                    <span class="bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">Oficial • Brașov</span>
+                    <h1 class="text-4xl md:text-7xl font-black mb-8 leading-[1.1] tracking-tight text-white">Consiliul Județean<br>al Elevilor <span class="text-purple-400">Brașov</span></h1>
+                    <p class="text-lg md:text-2xl font-light italic max-w-2xl mx-auto opacity-95 text-gray-200">Vocea care contează. Puterea care reprezintă fiecare elev din județul Brașov.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistici -->
+    <section class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-16 md:gap-32">
+                <div class="flex items-center space-x-6">
+                    <div class="stat-icon-bg p-5 rounded-3xl shadow-sm">
+                        <i class="fas fa-university text-purple-500 text-4xl mb-0"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-5xl font-black text-white counter" data-target="42">0</div>
+                        <p class="text-purple-500 text-sm font-bold uppercase tracking-widest">Consilii Școlare</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div class="stat-icon-bg p-5 rounded-3xl shadow-sm">
+                        <i class="fas fa-users text-purple-500 text-4xl mb-0"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-5xl font-black text-white counter" data-target="92000">0</div>
+                        <p class="text-purple-500 text-sm font-bold uppercase tracking-widest">Elevi Reprezentați</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Obiective -->
+    <section class="py-24 bg-gray-900 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-sm font-black text-purple-500 uppercase tracking-[0.3em] mb-4">Misiunea Noastră</h2>
+                <p class="text-3xl md:text-5xl font-black text-white tracking-tight">Pilonii Reprezentării</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <!-- Stânga: Respectarea Statutului -->
+                <div class="objective-card card-side">
+                    <div class="icon-container">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-white mb-6 uppercase tracking-tight">Integritate & Drepturi</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        Monitorizăm riguros aplicarea fiecărui articol din Statutul Elevului. Nu permitem abuzurile de putere și ne asigurăm că regulamentele interne ale școlilor nu încalcă libertățile fundamentale ale beneficiarilor primari ai educației. Suntem prima linie de apărare în fața nedreptății.
+                    </p>
+                    <div class="mt-8 pt-6 border-t border-gray-700 text-purple-400 text-xs font-bold uppercase">Legalitate Garantată</div>
+                </div>
+
+                <!-- Centru: Bursele Elevilor -->
+                <div class="objective-card card-center">
+                    <div class="icon-container">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-white mb-6 uppercase tracking-tighter">Susținere Financiară</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Educația nu trebuie să fie condiționată de situația financiară. Luptăm activ pentru creșterea fondurilor alocate burselor de merit, reziliență și sociale la nivelul întregului județ Brașov. 
+                        <br><br>
+                        Intervenim direct în consiliile locale pentru a asigura plata la timp a sumelor datorate și pentru a elimina criteriile birocratice absurde care îi împiedică pe elevi să beneficieze de drepturile lor bănești legale.
+                    </p>
+                    <div class="mt-10 bg-purple-600 text-white py-3 rounded-xl text-xs font-black uppercase tracking-widest shadow-lg shadow-purple-900/50">
+                        Prioritate Județeană
+                    </div>
+                </div>
+
+                <!-- Dreapta: Transport Gratuit -->
+                <div class="objective-card card-side">
+                    <div class="icon-container">
+                        <i class="fas fa-train"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-white mb-6 uppercase tracking-tight">Mobilitate Totală</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        Niciun elev nu trebuie să abandoneze școala din cauza costurilor de navetă. Susținem implementarea transportului gratuit pe toate rutele județene și metropolitane. Colaborăm cu operatorii și autoritățile pentru a asigura condiții decente și orare corelate cu programul școlar.
+                    </p>
+                    <div class="mt-8 pt-6 border-t border-gray-700 text-purple-400 text-xs font-bold uppercase">Acces Universal</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Minimalist / Clean -->
+    <footer class="bg-black py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Logo Footer -->
+                <div class="flex items-center space-x-3">
+                    <div class="font-black text-xl tracking-tight text-white">
+                        CJE <span class="text-purple-500">Brașov</span>
+                    </div>
+                </div>
+
+                <!-- Social Media Footer -->
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-purple-500 text-xl transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-purple-400 text-xl transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white text-xl transition-colors" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500 font-medium">
+                    &copy; 2026 Consiliul Județean al Elevilor Brașov. Toate drepturile rezervate.
+                </p>
+                <a href="mailto:brasov@consiliulelevilor.ro" class="text-sm font-medium text-gray-500 hover:text-purple-500 transition-colors">
+                    brasov@consiliulelevilor.ro
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Logica pentru numărătoare
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const updateCount = () => {
+                    const count = +counter.innerText.replace(/\./g, '');
+                    const increment = target / speed;
+                    if (count < target) {
+                        const nextValue = Math.ceil(count + increment);
+                        counter.innerText = (nextValue > target ? target : nextValue).toLocaleString('ro-RO');
+                        setTimeout(updateCount, 10);
+                    } else {
+                        counter.innerText = target.toLocaleString('ro-RO');
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if(document.querySelector('.counter')) {
+            observer.observe(document.querySelector('.counter').closest('section'));
+        }
+
+        // Logica pentru Caruselul Random
+        const slides = document.querySelectorAll('.carousel-slide');
+        
+        // 1. Alegem un slide de start random
+        let currentSlide = Math.floor(Math.random() * slides.length);
+        slides[currentSlide].classList.add('opacity-100');
+        
+        // 2. Funcție pentru tranziția către următoarea imagine random
+        function nextRandomSlide() {
+            // Ascundem slide-ul curent
+            slides[currentSlide].classList.remove('opacity-100');
+            
+            // Alegem un nou slide random care să nu fie la fel cu cel curent
+            let nextIndex;
+            do {
+                nextIndex = Math.floor(Math.random() * slides.length);
+            } while (nextIndex === currentSlide);
+            
+            currentSlide = nextIndex;
+            
+            // Arătăm noul slide
+            slides[currentSlide].classList.add('opacity-100');
+        }
+
+        // Schimbăm imaginea o dată la 4 secunde
+        setInterval(nextRandomSlide, 4000);
+    </script>
+</body>
+</html>
