@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lansare Platformă Voluntariat - CJE Brașov</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        :root { --accent-purple: #a855f7; --dark-bg: #050505; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--dark-bg); color: #f8fafc; }
+        .fade-up { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased">
+    <nav class="bg-[#050505]/80 backdrop-blur-lg border-b border-white/5 sticky top-0 z-50 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="cje.acasa.html" class="font-black text-xl uppercase text-white">CJE<br><span class="text-purple-500">Brașov</span></a>
+            <div class="space-x-8 hidden md:flex">
+                <a href="cje.acasa.html" class="hover:text-purple-500 transition-colors">Acasă</a>
+                <a href="cje.blog.html" class="text-purple-500">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-4xl mx-auto px-6 pt-16 pb-8">
+        <a href="cje.blog.html" class="text-purple-400 font-bold mb-6 inline-block"><i class="fas fa-arrow-left mr-2"></i> Înapoi la Blog</a>
+        <div class="fade-up visible">
+            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs font-bold uppercase border border-purple-500/30">Eveniment</span>
+            <h1 class="text-4xl md:text-5xl font-black mt-6 mb-6">Lansarea platformei de voluntariat pentru elevii din județ</h1>
+            <div class="text-neutral-400 flex items-center space-x-4">
+                <span><i class="far fa-calendar-alt text-purple-500 mr-2"></i> 15 Februarie 2026</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 pb-20">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" class="w-full h-96 object-cover rounded-3xl mb-12 border border-white/10">
+        <div class="prose prose-invert max-w-none text-neutral-300 leading-relaxed text-lg">
+            <p class="mb-6">Suntem mândri să anunțăm lansarea noii platforme de voluntariat, un proiect dedicat tuturor elevilor din Brașov care doresc să se implice în comunitate.</p>
+            <p>Această platformă va servi drept punte de legătură între organizațiile non-guvernamentale și elevii dornici să facă o schimbare.</p>
+        </div>
+    </main>
+</body>
+</html>
